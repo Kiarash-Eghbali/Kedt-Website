@@ -1,10 +1,12 @@
-import express from "express";
+import express, { type Express } from "express";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 import "dotenv/config";
 require("dotenv/config").config();
 
-const app = express();
+const app: Express = express();
 app.use(cookieParser());
+app.use(cors());
 
 const PORT: number | string = process.env.PORT || 5000;
 
