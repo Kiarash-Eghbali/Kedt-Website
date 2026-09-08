@@ -1,6 +1,5 @@
 "use client";
 import { useThemeContext } from "@/contexts/ThemeContext";
-import { useState } from "react";
 
 interface ReturnValues {
     isDark: boolean;
