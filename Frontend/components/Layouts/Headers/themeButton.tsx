@@ -15,7 +15,7 @@ function ThemeButton() {
 	const { isDark, toggleTheme } = useThemeChange();
 	return (
 		<>
-			<div className="flex itesm-center justify-around gap-3">
+			<div className="flex itesm-center  justify-center  gap-3">
 				<button
 					onClick={toggleTheme}
 					className={`w-9 h-9 rounded-md flex items-center justify-center border ${isDark ? "border-[#252525] hover:bg-[#252525]" : "border-gray-600 hover:bg-gray-200"} cursor-pointer transition-all duration-150`}
