@@ -14,9 +14,9 @@ function InfoBox() {
                         <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                         <h2 className={`text-[12px] font-bold ${poppins.className}`}>Full Stack Developer</h2>
                     </div>
-					<h1 className={` text-4xl pt-2 ${isDark ? "text-gray-300" : "" } font-black ${poppins.className}`}>Kiarash Eghbali</h1>
+					<h1 className={` text-4xl pt-7 ${isDark ? "text-gray-300" : "" } font-black ${poppins.className}`}>Kiarash Eghbali</h1>
                     <p className={`font-bold ${isDark ? "text-blue-400" : "text-gray-600"}`}>طراح و توسعه دهنده وبسایت های مدرن</p>
-                    <p className={`text-[11px] mt-5 ${isDark ? "text-blue-100" : "text-gray-500"} text-center`}>من کیارش اقبالی، توسعه‌دهنده فول‌استک ۱۶ ساله از ایرانم. با React، Next.js، TypeScript، Express و Laravel کار می‌کنم و عاشق ساختن چیزهای تمیز و مدرنم.</p>
+                    <p className={`text-[11px] mt-5 m-1 ${isDark ? "text-blue-100" : "text-gray-500"} text-center`}>من کیارش اقبالی، توسعه‌دهنده فول‌استک ۱۶ ساله از ایرانم. با React، Next.js، TypeScript، Express و Laravel کار می‌کنم و عاشق ساختن چیزهای تمیز و مدرنم.</p>
                     <InfoButton />
 				</div>
 			</div>
