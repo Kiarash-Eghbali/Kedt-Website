@@ -4,18 +4,17 @@ import { useState } from "react";
 
 interface ReturnValues {
     isDark: boolean;
-    changeThemeHandler: () => void;
+    toggleTheme: () => void;
 }
 
 function useThemeChange(): ReturnValues {
-	const [isDark, setIsDark] = useState<boolean>(false);
-    
-    function changeThemeHandler() {
-        setIsDark(! isDark);
+    const [isDark, setIsDark] = useState<boolean>(false);
+
+    function toggleTheme() {
+        setIsDark(prev => !prev);
     };
 
-    return { isDark, changeThemeHandler };
+    return { isDark, toggleTheme };
 }
-
 
 export default useThemeChange;
