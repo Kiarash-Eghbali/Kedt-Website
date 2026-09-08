@@ -4,12 +4,13 @@ import "./globals.css";
 import Header from "@/components/Layouts/Header";
 import Footer from "@/components/Layouts/Footer";
 
+
 const vazirMatn = Vazirmatn({
   subsets: ["arabic"],
 });
 
 export const metadata: Metadata = {
-  title: "KEDT | Kiarash Eghbali Developer Team",
+  title: "KEDT | تیم توسعه دهنده کیارش اقبالی",
   description: "KEDT website created with NextJs , Typescript , Tailwindcss , ExpressJs , NodeJs",
 };
 
