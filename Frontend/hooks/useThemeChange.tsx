@@ -1,5 +1,5 @@
 "use client";
-
+import { useThemeContext } from "@/contexts/ThemeContext";
 import { useState } from "react";
 
 interface ReturnValues {
@@ -8,7 +8,7 @@ interface ReturnValues {
 }
 
 function useThemeChange(): ReturnValues {
-    const [isDark, setIsDark] = useState<boolean>(false);
+    const {isDark, setIsDark} = useThemeContext();
 
     function toggleTheme() {
         setIsDark(prev => !prev);

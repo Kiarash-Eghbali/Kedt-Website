@@ -16,6 +16,7 @@ function Header() {
 						<Image
 							src={pic}
 							alt={"Kedt-Team-pic"}
+                            loading="eager"
 						/>
 					</Link>
 				</div>
