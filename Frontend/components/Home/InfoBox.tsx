@@ -8,9 +8,9 @@ function InfoBox() {
     const { isDark } = useThemeContext();
 	return (
 		<>
-			<div className={`flex items-center justify-center flex-col w-[90%] md:w-[80%] mx-auto border-b pb-10 ${isDark ? "border-[#252525]" : "border-gray-400"}`}>
+			<div className={`flex pt-30 h-screen items-center justify-center flex-col w-[90%] md:w-[80%] mx-auto border-b pb-10 ${isDark ? "border-[#252525]" : "border-gray-400"}`}>
 				<div className="flex items-center justify-center flex-col gap-2">
-                    <div className={`border ${isDark ? "bg-[#202020] border-blue-500/30 " : "bg-gray-500/5 border-blue-500"} mt-10 p-2 rounded-xl   flex items-center justify-center gap-1`}>
+                    <div className={`border ${isDark ? "bg-[#202020] border-blue-500/30 " : "bg-gray-500/5 border-blue-500"}  p-2 rounded-xl   flex items-center justify-center gap-1`}>
                         <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                         <h2 className={`text-[12px] font-bold ${poppins.className}`}>Full Stack Developer</h2>
                     </div>
