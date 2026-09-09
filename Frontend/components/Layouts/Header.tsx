@@ -6,12 +6,11 @@ import Navbar from "./Headers/navbar";
 import ThemeButton from "./Headers/themeButton";
 import { useThemeContext } from "@/contexts/ThemeContext";
 
-
 function Header() {
-    const { isDark } = useThemeContext();
+	const { isDark } = useThemeContext();
 	return (
 		<>
-			<header className={`w-full fixed top-0 border-b  ${isDark ? "border-[#292929]" : "border-gray-200" } px-8 py-3 flex items-center justify-between `}>
+			<header className={`w-full fixed top-0 border-b  ${isDark ? "border-[#292929]" : "border-gray-200"} px-8 py-3 flex items-center justify-between  `}>
 				<div className="flex items-center justify-center">
 					<Link
 						href={"/"}
@@ -20,12 +19,12 @@ function Header() {
 						<Image
 							src={pic}
 							alt={"Kedt-Team-pic"}
-                            loading="eager"
+							loading="eager"
 						/>
 					</Link>
 				</div>
-                <Navbar />
-                <ThemeButton />
+				<Navbar />
+				<ThemeButton />
 			</header>
 		</>
 	);
