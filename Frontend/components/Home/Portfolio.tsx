@@ -14,6 +14,7 @@ function Portfolio({ image, title, body, link, className, languages, classLang, 
 						src={image}
 						alt={title}
 						className={`w-65 h-40 rounded-xl mx-auto mb-5 `}
+						loading="eager"
 					/>
 				</div>
 
