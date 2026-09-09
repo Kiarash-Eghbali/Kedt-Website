@@ -1,12 +1,12 @@
 import InfoBox from "@/components/Home/InfoBox";
-import SliderInfoBox from "@/components/Home/SliderInfoBox";
+import CardInfoBox from "@/components/Home/CardInfoBox";
 
 function homePage() {
 	return (
 		<>
 			<section className="md:w-[80%] mx-auto">
 				<InfoBox />
-				<SliderInfoBox />
+				<CardInfoBox />
 			</section>
 		</>
 	);
