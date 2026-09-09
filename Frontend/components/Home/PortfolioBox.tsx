@@ -15,7 +15,7 @@ function PortfolioBox() {
 					<Portfolio
 						image={morvarid}
 						title={"شیرالات مروارید"}
-						body="یک فروشگاه آنلاین لوله‌ و اتصالات آب ساخته‌شده با WordPress و WooCommerce برای یک کسب‌وکار. شامل کاتالوگ محصولات، سفارش آنلاین و طراحی واکنش‌گرا."
+						body="یک فروشگاه آنلاین شیرالات ساخته‌شده با WordPress و WooCommerce برای یک کسب‌وکار. شامل کاتالوگ محصولات، سفارش آنلاین و طراحی واکنش‌گرا."
 						link="https://morvarid.top"
 						languages={["Wordpress", "JavaScript", "Elementor"]}
 						className={isDark ? "bg-[#202020] w-[85%] mx-auto px-5 py-3 rounded-lg text-[#999999]" : "border border-gray-400 w-[85%] mx-auto px-5 py-3 rounded-lg "}
