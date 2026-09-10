@@ -6,7 +6,7 @@ function LikeBox() {
     const { isDark } = useThemeContext();
     return (
         <>
-            <section className="py-5 flex items-center justify-center flex-col">
+            <section className="py-10 flex items-center justify-center flex-col">
                 <Like />
             </section>
         </>
