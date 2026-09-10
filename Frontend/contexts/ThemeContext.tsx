@@ -8,7 +8,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 	const [isDark, setIsDark] = useState<boolean>(false);
 	return (
 		<>
-			<body className={`min-h-full ${isDark ? "bg-[#141414] text-white" : "text-black"} flex md:mx-auto flex-col`}>
+			<body className={`min-h-full ${isDark ? "bg-[#141414] text-white" : "text-black bg-[whitesmoke]"} flex md:mx-auto flex-col`}>
 				<ThemeContext.Provider value={{ isDark, setIsDark }}>{children}</ThemeContext.Provider>
 			</body>
 		</>
