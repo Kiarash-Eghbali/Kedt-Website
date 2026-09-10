@@ -7,7 +7,7 @@ function Portfolio({ image, title, body, link, className, languages, classLang, 
 		<>
 			<Link
 				href={link}
-				className={` group  ${className ? className : ""} m-1 my-10 flex items-right justify-center flex-col hover:translate-y-[-3px] transition-all duration-150`}
+				className={` group  ${className ? className : ""} m-1 my-10 flex items-right justify-center flex-col hover:-translate-y-0.75 transition-all duration-150`}
 			>
 				<div className="overflow-hidden mx-auto rounded-xl group-hover:scale-103 transition-all  duration-300">
 					<Image

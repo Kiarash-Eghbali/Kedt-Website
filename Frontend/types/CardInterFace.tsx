@@ -1,5 +1,7 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
 interface CardInterFace {
-    icon: string;
+    icon: IconProp | string;
     title: string;
     body: string;
     className?: string ;
