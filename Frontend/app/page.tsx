@@ -1,6 +1,7 @@
 import InfoBox from "@/components/Home/InfoBox";
 import CardInfoBox from "@/components/Home/CardInfoBox";
 import PortfolioBox from "@/components/Home/PortfolioBox";
+import SkillInfoBox from "@/components/Home/SkillInfoBox";
 
 function homePage() {
 	return (
@@ -9,6 +10,7 @@ function homePage() {
 				<InfoBox />
 				<CardInfoBox />
 				<PortfolioBox />
+				<SkillInfoBox />
 			</section>
 		</>
 	);
