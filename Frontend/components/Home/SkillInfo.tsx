@@ -7,7 +7,7 @@ function SkillInfo() {
     const { isDark } = useThemeContext();
     return (
         <>
-            <section className={`py-5 border-b ${isDark ? "border-[#252525]" : "text-gray-400"} grid grid-cols-4 md:grid-cols-8 items-center   gap-3 `}>
+            <section className={`py-5 border-b ${isDark ? "border-[#252525]" : "text-gray-400"} grid grid-cols-4 md:grid-cols-8 items-center gap-3 lg:gap-5 `}>
                 <Skill
                     icon={SiTypescript}
                     name="TypeScript"
@@ -21,7 +21,7 @@ function SkillInfo() {
                 <Skill
                     icon={SiNextdotjs}
                     name="NextJs"
-                    classIcon={`group-hover:text-[#252525]`}
+                    classIcon={`group-hover:text-[#111111]`}
                 />
 
                 <Skill
