@@ -1,7 +1,7 @@
-import InfoBox from "@/components/Home/InfoBox";
-import CardInfoBox from "@/components/Home/CardInfoBox";
-import PortfolioBox from "@/components/Home/PortfolioBox";
-import SkillInfoBox from "@/components/Home/SkillInfoBox";
+import InfoBox from "@/components/Home/InfoSection/InfoBox";
+import CardInfoBox from "@/components/Home/CardSection/CardInfoBox";
+import PortfolioBox from "@/components/Home/PortfolioSection/PortfolioBox";
+import SkillInfoBox from "@/components/Home/SkillSection/SkillInfoBox";
 
 function homePage() {
 	return (
