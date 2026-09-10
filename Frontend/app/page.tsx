@@ -7,7 +7,7 @@ import LikeBox from "@/components/Home/LikeSection/LikeBox";
 function homePage() {
 	return (
 		<>
-			<section className="md:w-[80%] mx-auto">
+			<section className="md:w-[80%] flex items-center justify-center flex-col gap-30 mx-auto">
 				<InfoBox />
 				<CardInfoBox />
 				<PortfolioBox />
