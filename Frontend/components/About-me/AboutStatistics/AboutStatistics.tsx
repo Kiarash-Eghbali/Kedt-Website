@@ -6,7 +6,9 @@ function AboutStatistics() {
     const { isDark } = useThemeContext();
     return (
         <>
-            
+            <section>
+                
+            </section>
         </>
     )
 };
