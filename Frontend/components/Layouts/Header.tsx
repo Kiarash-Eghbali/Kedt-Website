@@ -19,7 +19,8 @@ function Header() {
 						<Image
 							src={pic}
 							alt={"Kedt-Team-pic"}
-							loading="lazy"
+							loading="eager"
+							sizes="(max-width: 768px) 100px, 260px"
 						/>
 					</Link>
 				</div>

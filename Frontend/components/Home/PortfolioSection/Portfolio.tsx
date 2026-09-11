@@ -15,6 +15,7 @@ function Portfolio({ image, title, body, link, className, languages, classLang, 
 						alt={title}
 						className={`w-65 h-40 rounded-xl mx-auto mb-5  aspect-auto`}
 						loading="lazy"
+						sizes="(max-width: 768px) 100px, 260px"
 						
 					/>
 				</div>
