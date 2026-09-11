@@ -13,10 +13,12 @@ function Portfolio({ image, title, body, link, className, languages, classLang, 
 					<Image
 						src={image}
 						alt={title}
-						className={`w-65 h-40 rounded-xl mx-auto mb-5  aspect-auto`}
+						width={520}
+						height={320}
+						sizes="260px"
 						loading="lazy"
-						sizes="(max-width: 768px) 100px, 260px"
-						
+						style={{ aspectRatio: "260/160" }} 
+						className="w-65 h-40 rounded-xl object-cover" 
 					/>
 				</div>
 
