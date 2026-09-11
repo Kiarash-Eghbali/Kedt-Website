@@ -13,7 +13,7 @@ function ThemeButton() {
 				<button
 					onClick={toggleTheme}
 					className={`w-9 h-9 rounded-md flex items-center justify-center border ${isDark ? "border-[#252525] hover:bg-[#252525]" : "border-gray-600 hover:bg-gray-200"} cursor-pointer transition-all duration-150`}
-					name="toggleTheme"
+					aria-label="toggleTheme"
 				>
 					<FontAwesomeIcon
 						icon={isDark ? faSun : faMoon}
@@ -21,7 +21,7 @@ function ThemeButton() {
 					/>
 				</button>
 				<button
-					name="mobileMenu"
+					aria-label="mobileMenu"
 					className={`w-9 h-9 rounded-md flex items-center md:hidden justify-center border ${isDark ? "border-[#252525] hover:bg-[#252525]" : "border-gray-600 hover:bg-gray-200"} cursor-pointer transition-all duration-150`}
 				>
 					<FontAwesomeIcon
