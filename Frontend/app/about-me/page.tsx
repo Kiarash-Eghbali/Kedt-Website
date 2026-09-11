@@ -6,7 +6,7 @@ import AboutTimelineBox from "@/components/About-me/AboutTimeline/AboutTimelineB
 function aboutMe() {
 	return (
 		<>
-			<main className="md:w-[80%] flex items-center justify-center flex-col gap-30 mx-auto">
+			<main className="md:w-[80%] flex items-center justify-center flex-col gap-10 mx-auto">
 				<AboutBox />
 				<AboutStatisticsBox />
 				<AboutTimelineBox />
