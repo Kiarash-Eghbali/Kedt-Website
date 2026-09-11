@@ -1,4 +1,4 @@
-import SkillInfoBox from "../Home/SkillSection/SkillInfoBox";
+import SkillInfoBox from "../../Home/SkillSection/SkillInfoBox";
 
 function AboutSkill() {
     return (
