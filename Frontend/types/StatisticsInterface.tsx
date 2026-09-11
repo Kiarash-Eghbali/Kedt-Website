@@ -4,8 +4,8 @@ interface StatisticsInterface {
     icon: IconProp;
     name: string;
     content: string;
-    className: string;
-    classTitle: string;
+    className?: string;
+    classTitle?: string;
 };
 
 export default StatisticsInterface;
