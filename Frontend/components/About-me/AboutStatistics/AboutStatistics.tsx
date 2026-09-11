@@ -19,7 +19,7 @@ function AboutStatistics() {
                 <Statistics
                     icon={faUsers}
                     name="تعداد اعضای تیم"
-                    content="2 نفر"
+                    content="1 نفر"
                     className={isDark ? "text-pink-400 hover:border-pink-400" : "text-pink-500 hover:border-pink-500"}
                     classTitle={isDark ? "group-hover:text-pink-400" : "group-hover:text-pink-500"}
                 />
