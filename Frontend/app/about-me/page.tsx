@@ -4,7 +4,7 @@ import AboutSkill from "@/components/About-me/AboutSkill/AboutSkill";
 function aboutMe() {
 	return (
 		<>
-			<main className="md:w-[80%] flex items-center justify-center flex-col gap-5 mx-auto">
+			<main className="md:w-[80%] flex items-center justify-center flex-col gap-30 mx-auto">
 				<AboutBox />
 				<AboutSkill />
 			</main>
