@@ -5,7 +5,9 @@ interface StatisticsInterface {
     name: string;
     content: string;
     className?: string;
+    classIcon?: string;
     classTitle?: string;
+    classContent?: string;
 };
 
 export default StatisticsInterface;
