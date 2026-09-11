@@ -13,8 +13,9 @@ function Portfolio({ image, title, body, link, className, languages, classLang, 
 					<Image
 						src={image}
 						alt={title}
-						className={`w-65 h-40 rounded-xl mx-auto mb-5 `}
-						loading="eager"
+						className={`w-65 h-40 rounded-xl mx-auto mb-5  aspect-auto`}
+						loading="lazy"
+						
 					/>
 				</div>
 

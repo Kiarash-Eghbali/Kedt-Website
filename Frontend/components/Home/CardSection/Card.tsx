@@ -1,13 +1,7 @@
 import CardInterFace from "@/types/CardInterFace";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import useThemeChange from "@/hooks/useThemeChange";
-
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-
-library.add(fas, far, fab);
+import { faLaptopCode, faServer } from "@fortawesome/free-solid-svg-icons";
+import { faCpanel, faSquareFigma } from "@fortawesome/free-brands-svg-icons";
 
 function Card({ icon, title, body, className }: CardInterFace) {
 	return (

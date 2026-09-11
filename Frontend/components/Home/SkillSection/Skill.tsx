@@ -1,5 +1,4 @@
 "use client";
-import {  SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiLaravel, SiMongodb, SiWordpress } from "react-icons/si";
 import SkillInterface from "@/types/SkillInterface";
 import { useThemeContext } from "@/contexts/ThemeContext";
 import { Poppins } from "next/font/google";

@@ -1,17 +1,12 @@
 "use client";
 import { useThemeContext } from "@/contexts/ThemeContext";
+import { faThumbsDown, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp, library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 
-library.add(fas, far, fab);
 
 function LikeButton() {
 	const { isDark } = useThemeContext();
-    const like : IconProp = 'fa-solid fa-thumbs-up';
-    const disLike: IconProp = "fa-solid fa-thumbs-down";
+
 
 	return (
 		<>
@@ -22,7 +17,7 @@ function LikeButton() {
 				>
 					<h1 className={`hidden group-hover:inline-block transition-all duration-150 ${isDark ? "" : "text-gray-600"}`}>راضی بودم</h1>
 					<FontAwesomeIcon
-						icon={like}
+						icon={faThumbsUp}
 						className={` text-xl group-hover:text-green-500 transition-all duration-150 ${isDark ? "" : "text-[#444444]"} `}
 					/>
 				</button>
@@ -31,7 +26,7 @@ function LikeButton() {
 				>
 					<h1 className={`hidden group-hover:inline-block transition-all duration-150 ${isDark ? "" : "text-gray-600"}`}>راضی نبودم</h1>
 					<FontAwesomeIcon
-						icon={disLike}
+						icon={faThumbsDown}
 						className={` text-xl group-hover:text-red-500 group-hover:animate-pulse transition-all duration-150 ${isDark ? "" : "text-[#444444]"} `}
 					/>
 				</button>

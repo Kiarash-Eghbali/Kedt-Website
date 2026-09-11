@@ -1,7 +1,9 @@
 function aboutMe() {
     return (
         <>
-            <h1>About me page</h1>
+            <section className="md:w-[80%] flex items-center justify-center flex-col gap-30 mx-auto">
+                
+            </section>
         </>
     )
 };

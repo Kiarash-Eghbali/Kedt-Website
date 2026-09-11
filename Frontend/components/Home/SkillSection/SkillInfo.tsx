@@ -1,7 +1,14 @@
 "use client";
 import { useThemeContext } from "@/contexts/ThemeContext";
 import Skill from "./Skill";
-import { SiExpress,  SiLaravel, SiMongodb, SiNextdotjs, SiNodedotjs,  SiReact, SiTypescript, SiWordpress } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
+import { SiLaravel } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { SiReact } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
+import { SiNodedotjs } from "react-icons/si";
+import { SiWordpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
 
 function SkillInfo() {
     const { isDark } = useThemeContext();
