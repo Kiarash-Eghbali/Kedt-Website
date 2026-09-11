@@ -14,7 +14,7 @@ function InfoBox() {
 					</div>
 					<h1 className={` text-4xl md:text-6xl pt-7 ${isDark ? "text-gray-300" : ""}  font-[poppins]`}>Kiarash Eghbali</h1>
 					<p className={`font-bold md:text-2xl ${isDark ? "text-blue-400" : "text-gray-600"}`}>طراح و توسعه دهنده وبسایت های مدرن</p>
-					<p className={`text-[11px] md:text-base mt-5 m-1 w-[70%] ${isDark ? "text-blue-300" : "text-gray-700"} text-center`}>
+					<p className={`text-[11px] md:text-base mt-5 m-1 w-[70%] ${isDark ? "text-[#777777]" : "text-gray-700"} text-center`}>
 						من کیارش اقبالی، توسعه‌دهنده فول‌استک ۱۶ ساله از ایرانم. با React، Next.js، TypeScript، Express و Laravel کار می‌کنم و عاشق ساختن چیزهای تمیز و مدرنم.
 					</p>
 					<InfoButton />
