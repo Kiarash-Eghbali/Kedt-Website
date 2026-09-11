@@ -9,13 +9,13 @@ function AboutBox() {
 	const { isDark } = useThemeContext();
 	return (
 		<>
-			<section className={`h-[50%]  ${isDark ? "border border-[#252525] px-3 py-2 rounded-xl" : ""}  md:w-[90%] lg:w-[60%] flex items-center justify-center flex-col`}>
+			<section className={`h-[50%]  ${isDark ? "border border-[#252525] px-3 py-2 rounded-xl" : "border border-gray-300 px-3 py-2 rounded-xl"}  md:w-[90%] lg:w-[60%] flex items-center justify-center flex-col`}>
 				<Image
 					src={pic}
 					alt={"kedt-team-pic"}
 					width={80}
 					height={80}
-					className={`w-20 h-20 md:w-25 md:h-25 p-2 object-cover rounded-full ${isDark ? "bg-[#252525]" : "bg-gray-200"}`}
+					className={`w-20 h-20 md:w-25 md:h-25 p-2 object-cover rounded-full ${isDark ? "bg-[#252525]" : "bg-white"}`}
 					sizes="80px"
 					loading="lazy"
 				/>
