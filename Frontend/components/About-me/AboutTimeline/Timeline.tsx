@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function Timeline({ year, title, content, className, classYear, classTitle, classContent }: TimelineInterface) {
     const { isDark } = useThemeContext();
-    const [isOpen, setIsOpen] = useState<boolean>(true);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     function setOpenHandler(): void {
         setIsOpen(!isOpen);
