@@ -7,7 +7,7 @@ function ContactInfo() {
 	const { isDark } = useThemeContext();
 	return (
 		<>
-			<section className={`grid grid-cols-1 items-start justify-start  gap-5`}>
+			<section className={`grid grid-cols-1 items-start justify-start  gap-10`}>
                 <InfoParagraph />
                 <Info />
 			</section>
