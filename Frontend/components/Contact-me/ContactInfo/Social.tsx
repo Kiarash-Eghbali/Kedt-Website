@@ -8,14 +8,14 @@ function Social({ icon, content, className }: ContactSocialInterface) {
 	return (
 		<>
 			<div className={`w-full flex items-start justify-start md:items-center `}>
-				<div className={`px-3 py-3  flex items-center justify-center rounded-xl ${isDark ? "bg-[#252525]" : ""}  `}>
+				<div className={`px-3 py-3  flex items-center justify-center rounded-xl ${isDark ? "bg-[#252525]" : "bg-white border border-[#999999]"}  `}>
 					<FontAwesomeIcon
 						icon={icon}
 						className={`${className ? className : ""} text-2xl `}
 					/>
 				</div>
 				<div className={`flex px-3 py-3 items-center justify-center`}>
-					<h1 className={`text-sm md:text-xs`}>{content}</h1>
+					<h1 className={`text-sm md:text-xs ${isDark ? "" : "text-gray-700 font-bold"}`}>{content}</h1>
 				</div>
 			</div>
 		</>
