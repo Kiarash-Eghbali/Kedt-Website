@@ -13,22 +13,22 @@ function Info() {
                 <Social 
                     icon={faEnvelope}
                     content="king.game.live89@gmail.com"
-                    className={isDark ? "text-red-400" : ""}
+                    className={isDark ? "text-red-400" : "text-pink-400"}
                 />
                 <Social
                     icon={faTelegram}
                     content="KiarashEgh@"
-                    className={isDark ? "text-blue-400" : ""}
+                    className={isDark ? "text-blue-400" : "text-blue-500"}
                 />
                 <Social
                     icon={faLinkedin}
                     content="KiarashEghbali@"
-                    className={isDark ? "text-blue-500" : ""}
+                    className={isDark ? "text-blue-500" : "text-blue-600"}
                 />
                 <Social
                     icon={faInstagram}
                     content="KiarashJson@"
-                    className={isDark ? "text-pink-600" : ""}
+                    className={isDark ? "text-pink-600" : "text-pink-600"}
                 />
             </div>
 		</>
