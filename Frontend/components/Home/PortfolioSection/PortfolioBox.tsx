@@ -9,7 +9,7 @@ function PortfolioBox() {
 	const { isDark } = useThemeContext();
 	return (
 		<>
-			<section className={`mt-5 flex items-center justify-center flex-col`}>
+			<section id="portfolio" className={`pt-5 scroll-mt-30 flex items-center justify-center flex-col`}>
 				<h1 className={`text-xl text-center font-bold ${isDark ? "text-[#888888]" : "text-gray-600"}`}>نمونه کار</h1>
 				<section className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border-b ${isDark ? "border-[#252525]" : "border-gray-400"} mb-5 items-center w-full justify-center`}>
 					<Portfolio

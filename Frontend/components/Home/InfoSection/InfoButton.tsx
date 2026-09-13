@@ -2,6 +2,16 @@
 import Link from "next/link";
 import { useThemeContext } from "@/contexts/ThemeContext";
 
+export function scrollToSection(id: string) {
+  const element = document.getElementById(id);
+  if (!element) return;
+  
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
 function InfoButton() {
     const { isDark } = useThemeContext();
     return (
@@ -12,11 +22,11 @@ function InfoButton() {
                      : "bg-blue-500 p-2 px-5 rounded-md text-sm md:text-lg hover:bg-blue-600 transition-all duration-150 text-white"
                      
                 }>تماس با من</Link>
-                <Link href={"/"} className={isDark 
+                <button onClick={() => scrollToSection("portfolio")} className={isDark 
                     ? "border border-[#252525] p-2 px-5 rounded-md text-sm md:text-lg hover:bg-[#252525] transition-all duration-150" 
                     : "border border-gray-600 p-2 px-5 rounded-md text-sm md:text-lg hover:bg-gray-100 text-gray-600 transition-all duration-150"
                 
-                }>نمونه کار ها</Link>
+                }>نمونه کار ها</button>
             </div>
         </>
     )
