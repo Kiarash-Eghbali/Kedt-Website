@@ -1,8 +1,8 @@
 import express, { type Express } from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
-import connectDB from "./configs/db";
-import reactionRoute from "./routers/reactionRoute";
+import connectDB from "./../src/configs/db";
+import reactionRoute from "./../src/routers/reactionRoute";
 import cors from "cors";
 
 dotenv.config();
@@ -20,5 +20,5 @@ app.use("/reaction", reactionRoute);
 const PORT: number | string = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-	console.log("KEDT Server is running");
+    console.log("KEDT Server is running");
 });
