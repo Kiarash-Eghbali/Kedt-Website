@@ -3,15 +3,17 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import connectDB from "./configs/db";
 import reactionRoute from "./routers/reactionRoute";
+import cors from "cors";
 
 dotenv.config();
 
 connectDB();
-
 const app: Express = express();
 app.use(express.json());
 app.use(cookieParser());
 app.set("trust proxy", 1);
+app.use(cors({ origin: "http://localhost:3000", credentials: true }))
+
 
 app.use("/reaction", reactionRoute);
 
