@@ -29,4 +29,24 @@ router.get("/", viewMiddleware, async (req: Request, res: Response) => {
 	}
 });
 
+router.post("/like", async (req: Request ,res: Response) => {
+	try {
+		const ipExists = await Reaction.findOne({ ip: req.ip, type: "like" })
+		if (! ipExists ) {
+			await Reaction.create({ ip: req.ip, type: "like" });
+		} else {
+			const likes = await Reaction.countDocuments({ type: "like" })
+			return res.status(200).json({ result: "liked before", code: "LIKED_BEFORE", statusCode: 200, value: { likes } });
+		}
+
+		const likes = await Reaction.countDocuments({ type: "like" });
+		res.json({ result: "success", code: "SUCCESSED", statusCode: 200, values: { likes } })
+	} catch (error) {
+		res.status(500).json({ result: "server error", code: "SERVER_ERROR", statusCode: 500 });
+	}
+})
+
+
+
+
 export default router;
