@@ -7,6 +7,8 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ViewProvider } from "@/contexts/ViewContext";
 import { ToastContainer } from "react-toastify";
 import { ReactionProvider } from "@/contexts/ReactionContext";
+import { MenuProvider } from "@/contexts/MenuContext";
+import Menu from "@/components/Layouts/Headers/menu";
 
 const vazirMatn = Vazirmatn({ subsets: ["arabic"], display: "swap", preload: true, adjustFontFallback: true });
 const poppins = Poppins({ subsets: ["latin"], display: "swap", variable: "--font-poppins", weight: ["500"] });
@@ -37,9 +39,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 				/>
 				<ViewProvider>
 					<ReactionProvider>
-						<Header />
-						{children}
-						<Footer />
+						<MenuProvider>
+							<Menu />
+							<Header />
+							{children}
+							<Footer />
+						</MenuProvider>
 					</ReactionProvider>
 				</ViewProvider>
 			</ThemeProvider>
