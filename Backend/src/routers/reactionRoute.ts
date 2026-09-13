@@ -9,9 +9,9 @@ router.get("/", viewMiddleware, async (req: Request, res: Response) => {
 			const ipExists = await Reaction.findOne({ ip: req.ip, type: "view" });
 			if (!ipExists) {
 				res.cookie("viewed", "true", {
-					secure: false, // in real domain is true
+					secure: true, // in real domain is true
 					maxAge: 10 * 24 * 60 * 60 * 1000,
-					sameSite: "lax",
+					sameSite: "none",
 				});
 				await Reaction.create({ type: "view", ip: req.ip });
 			}
