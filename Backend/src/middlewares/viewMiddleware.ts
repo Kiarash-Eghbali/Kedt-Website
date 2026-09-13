@@ -5,12 +5,11 @@ const viewMiddleware = function (req: Request, res: Response, next: NextFunction
     const cookie = req.cookies;
     if (!cookie.viewed) {
         req.body.newViewer = false;
-        next();
     } else {
         req.body.newViewer = true;
-        next();
     };
 
+    next();
 };
 
 export default viewMiddleware;
