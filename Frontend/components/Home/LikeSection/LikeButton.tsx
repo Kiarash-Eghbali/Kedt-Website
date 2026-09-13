@@ -1,4 +1,5 @@
 "use client";
+import { useReactionContext } from "@/contexts/ReactionContext";
 import { useThemeContext } from "@/contexts/ThemeContext";
 import { faThumbsDown, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function LikeButton() {
 	const { isDark } = useThemeContext();
-
+	const { likeFn, dislikeFn } = useReactionContext();
 
 	return (
 		<>
@@ -15,6 +16,7 @@ function LikeButton() {
 				<button
 					className={`group ${isDark ? "bg-[#252525] px-3 py-3 hover:scale-110 transition-all duration-150  rounded-md flex items-center justify-center border border-[#252525]" : "bg-white px-3 py-3 hover:scale-110 transition-all duration-150 rounded-md flex items-center justify-center border border-[#999999]"} `}
 					aria-label="likeButton"
+					onClick={likeFn}
 				>
 					<h1 className={`hidden group-hover:inline-block transition-all duration-150 ${isDark ? "" : "text-gray-600"}`}>راضی بودم</h1>
 					<FontAwesomeIcon
@@ -25,6 +27,7 @@ function LikeButton() {
 				<button
 					className={`group ${isDark ? "bg-[#252525] px-3 py-3 hover:scale-110 transition-all duration-150 rounded-md flex items-center justify-center border border-[#252525]" : "bg-white px-3 py-3 hover:scale-110 transition-all duration-150 rounded-md flex items-center justify-center border border-[#999999]"} `}
 					aria-label="disLikeButton"
+					onClick={dislikeFn}
 				>
 					<h1 className={`hidden group-hover:inline-block transition-all duration-150 ${isDark ? "" : "text-gray-600"}`}>راضی نبودم</h1>
 					<FontAwesomeIcon
