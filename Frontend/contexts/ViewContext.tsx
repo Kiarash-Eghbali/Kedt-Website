@@ -7,7 +7,7 @@ const ViewContext = createContext<number | null>(null);
 export function ViewProvider({ children }: { children: ReactNode }) {
 	const [views, setViews] = useState<number>(0);
     const { isDark } = useThemeContext();
-	const API = process.env.API_URL
+	const API = process.env.API_URI
 
 	useEffect(() => {
 		async function getViews() {

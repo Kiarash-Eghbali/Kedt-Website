@@ -7,7 +7,7 @@ import { useThemeContext } from "./ThemeContext";
 const ReactionContext = createContext<ReactionContextType | null>(null);
 
 export function ReactionProvider({ children }: { children: ReactNode }) {
-	const API = process.env.API_URL
+	const API = process.env.API_URI
 	const [likes, setLike] = useState<number>(0);
 	const [dislikes, setDislike] = useState<number>(0);
     const { isDark } = useThemeContext();
