@@ -11,7 +11,7 @@ connectDB();
 const app: Express = express();
 app.use(express.json());
 app.use(cookieParser());
-app.set("trust proxy", 1);
+app.set("trust proxy", true);
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }))
 
 

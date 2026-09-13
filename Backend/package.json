@@ -3,6 +3,7 @@
     "server": "nodemon --exec \"tsx\" ./src/server.ts"
   },
   "dependencies": {
+    "@vercel/functions": "^3.9.7",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
