@@ -7,12 +7,13 @@ import { useThemeContext } from "./ThemeContext";
 const ReactionContext = createContext<ReactionContextType | null>(null);
 
 export function ReactionProvider({ children }: { children: ReactNode }) {
+	const API = process.env.API_URL
 	const [likes, setLike] = useState<number>(0);
 	const [dislikes, setDislike] = useState<number>(0);
     const { isDark } = useThemeContext();
 
 	async function getValue() {
-		let res = await fetch("http://localhost:5000/reaction", { credentials: "include" });
+		let res = await fetch(`${API}/reaction`, { credentials: "include" });
 
 		if (res.ok) {
 			const data = await res.json();
@@ -22,7 +23,7 @@ export function ReactionProvider({ children }: { children: ReactNode }) {
 	}
 
 	async function likeFn() {
-		let res = await fetch("http://localhost:5000/reaction/like", { method: "POST", credentials: "include" });
+		let res = await fetch(`${API}/reaction/like`, { method: "POST", credentials: "include" });
 
 		if (res.ok) {
 			const data = await res.json();
@@ -42,7 +43,7 @@ export function ReactionProvider({ children }: { children: ReactNode }) {
 	}
 
 	async function dislikeFn() {
-		let res = await fetch("http://localhost:5000/reaction/dislike", { method: "POST", credentials: "include" });
+		let res = await fetch(`${API}/reaction/dislike`, { method: "POST", credentials: "include" });
 
 		if (res.ok) {
 			const data = await res.json();

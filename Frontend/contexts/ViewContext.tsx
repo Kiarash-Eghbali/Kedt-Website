@@ -7,10 +7,11 @@ const ViewContext = createContext<number | null>(null);
 export function ViewProvider({ children }: { children: ReactNode }) {
 	const [views, setViews] = useState<number>(0);
     const { isDark } = useThemeContext();
+	const API = process.env.API_URL
 
 	useEffect(() => {
 		async function getViews() {
-			let res = await fetch("http://localhost:5000/reaction", { credentials: "include" });
+			let res = await fetch(`${API}/reaction`, { credentials: "include" });
 
 			if (res.ok) {
 				const data = await res.json();
