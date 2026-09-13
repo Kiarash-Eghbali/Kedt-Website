@@ -3,13 +3,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useThemeChange from "@/hooks/useThemeChange";
 import Link from "next/link";
-import { faMoon, faSun, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun, faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import Menu from "./menu";
+import { useMenuContext } from "@/contexts/MenuContext";
 
 function ThemeButton() {
 	const { isDark, toggleTheme } = useThemeChange();
+	const { isOpen, setIsOpen } = useMenuContext();
 	return (
 		<>
-			<div className="flex itesm-center  justify-center  gap-3">
+			<div className="flex itesm-center relative z-10 justify-center  gap-3">
 				<button
 					onClick={toggleTheme}
 					className={`w-9 h-9 rounded-md flex items-center justify-center border ${isDark ? "border-[#252525] hover:bg-[#252525]" : "border-gray-600 hover:bg-gray-200"} cursor-pointer transition-all duration-150`}
@@ -22,7 +26,8 @@ function ThemeButton() {
 				</button>
 				<button
 					aria-label="mobileMenu"
-					className={`w-9 h-9 rounded-md flex items-center md:hidden justify-center border ${isDark ? "border-[#252525] hover:bg-[#252525]" : "border-gray-600 hover:bg-gray-200"} cursor-pointer transition-all duration-150`}
+					onClick={() => setIsOpen(true)}
+					className={`w-9 h-9 relative  z-50 rounded-md flex items-center md:hidden justify-center border ${isDark ? "border-[#252525] hover:bg-[#252525]" : "border-gray-600 hover:bg-gray-200"} cursor-pointer transition-all duration-150`}
 				>
 					<FontAwesomeIcon
 						icon={faBars}
