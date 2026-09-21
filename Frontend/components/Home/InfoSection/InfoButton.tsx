@@ -23,8 +23,8 @@ function InfoButton() {
                      
                 }>تماس با من</Link>
                 <button onClick={() => scrollToSection("portfolio")} className={isDark 
-                    ? "border border-[#252525] p-2 px-5 rounded-md text-sm md:text-lg hover:bg-[#252525] transition-all duration-150" 
-                    : "border border-gray-600 p-2 px-5 rounded-md text-sm md:text-lg hover:bg-gray-100 text-gray-600 transition-all duration-150"
+                    ? "border bg-[#151515] border-[#252525] p-2 px-5 rounded-md text-sm md:text-lg hover:bg-[#252525] transition-all duration-150" 
+                    : "border bg-white border-gray-600 p-2 px-5 rounded-md text-sm md:text-lg hover:bg-gray-100 text-gray-600 transition-all duration-150"
                 
                 }>نمونه کار ها</button>
             </div>
