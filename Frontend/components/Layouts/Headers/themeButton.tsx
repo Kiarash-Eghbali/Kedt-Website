@@ -2,15 +2,13 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useThemeChange from "@/hooks/useThemeChange";
-import Link from "next/link";
-import { faMoon, faSun, faBars, faClose } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import Menu from "./menu";
+import { faMoon, faSun, faBars } from "@fortawesome/free-solid-svg-icons";
+
 import { useMenuContext } from "@/contexts/MenuContext";
 
 function ThemeButton() {
 	const { isDark, toggleTheme } = useThemeChange();
-	const { isOpen, setIsOpen } = useMenuContext();
+	const { setIsOpen } = useMenuContext();
 	return (
 		<>
 			<div className="flex itesm-center relative z-10 justify-center  gap-3">

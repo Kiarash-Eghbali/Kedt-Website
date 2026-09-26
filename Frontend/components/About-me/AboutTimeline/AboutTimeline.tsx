@@ -1,9 +1,8 @@
 "use client";
-import { useThemeContext } from "@/contexts/ThemeContext";
+
 import Timeline from "./Timeline";
 
 function AboutTimeline() {
-    const { isDark } = useThemeContext();
     return (
         <>
             <section className={`flex items-start mt-5 justify-center gap-5 flex-col`}>

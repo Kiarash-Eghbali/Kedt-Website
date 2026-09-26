@@ -1,7 +1,6 @@
 import CardInterFace from "@/types/CardInterFace";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode, faServer } from "@fortawesome/free-solid-svg-icons";
-import { faCpanel, faSquareFigma } from "@fortawesome/free-brands-svg-icons";
+
 
 function Card({ icon, title, body, className }: CardInterFace) {
 	return (
