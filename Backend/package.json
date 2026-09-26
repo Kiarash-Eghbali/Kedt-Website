@@ -11,13 +11,15 @@
     "express-session": "^1.19.0",
     "mongodb": "^7.6.0",
     "mongoose": "^9.9.5",
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "ws": "^8.22.0"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^22.20.2",
+    "@types/ws": "^8.18.1",
     "ts-node": "^10.9.2",
     "tsx": "^4.23.13"
   }
