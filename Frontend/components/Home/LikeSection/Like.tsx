@@ -1,11 +1,9 @@
 "use client";
-import { useThemeContext } from "@/contexts/ThemeContext";
 import LikeButton from "./LikeButton";
 import LikeCountBox from "./LikeCountBox";
 
 
 function Like() {
-    const { isDark } = useThemeContext();
     return (
         <>
             <section className={`grid grid-cols-1 items-center justify-center`}>

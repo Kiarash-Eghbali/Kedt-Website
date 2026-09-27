@@ -1,12 +1,10 @@
 "use client";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { useThemeContext } from "./ThemeContext";
 
 const ViewContext = createContext<number | null>(null);
 
 export function ViewProvider({ children }: { children: ReactNode }) {
 	const [views, setViews] = useState<number>(0);
-    const { isDark } = useThemeContext();
 	const API = process.env.NEXT_PUBLIC_API_URL
 
 	useEffect(() => {
