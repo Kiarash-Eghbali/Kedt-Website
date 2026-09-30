@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "server": "nodemon --exec \"tsx\" ./src/server.ts"
+    "server": "nodemon --exec \"tsx\" ./api/index.ts"
   },
   "dependencies": {
     "@vercel/functions": "^3.9.7",
