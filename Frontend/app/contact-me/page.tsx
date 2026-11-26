@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useThemeContext } from "@/contexts/ThemeContext";
 import FAQBox from "@/components/Contact-me/ContactFAQ/FAQBox";
 import { faEnvelope, faPaperPlane, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
