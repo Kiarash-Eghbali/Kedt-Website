@@ -1,2 +1,185 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light;
+  --kedt-accent: #3b82f6;
+  --kedt-accent-strong: #2563eb;
+  --kedt-surface: #ffffff;
+  --kedt-surface-soft: #f8fafc;
+  --kedt-border: #e5e7eb;
+  --kedt-muted: #64748b;
+  --kedt-shadow: 0 18px 50px -28px rgb(15 23 42 / 22%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--kedt-surface);
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+::selection {
+  color: #fff;
+  background: rgb(37 99 235 / 82%);
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+a {
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.22em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--kedt-accent);
+  outline-offset: 4px;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* Subtle scrollbar that stays visible and usable. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #94a3b8;
+  background-clip: padding-box;
+}
+
+/* Fixed navigation: retain the original layout, with a cleaner glass finish. */
+header {
+  border-color: color-mix(in srgb, var(--kedt-border) 78%, transparent);
+  background-color: color-mix(in srgb, var(--kedt-surface) 88%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  transition: background-color 240ms ease, border-color 240ms ease;
+}
+
+header a,
+footer a {
+  transition: color 180ms ease, opacity 180ms ease, transform 180ms ease;
+}
+
+header a:hover,
+footer a:hover {
+  opacity: 0.82;
+}
+
+/* Refine existing bordered panels and cards without changing their content. */
+main .border.rounded-xl,
+main .border.rounded-lg,
+main .rounded-xl.border,
+main .rounded-lg.border {
+  border-color: color-mix(in srgb, var(--kedt-border) 82%, transparent);
+  box-shadow: var(--kedt-shadow);
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+main .border.rounded-xl:hover,
+main .border.rounded-lg:hover,
+main .rounded-xl.border:hover,
+main .rounded-lg.border:hover {
+  border-color: color-mix(in srgb, var(--kedt-accent) 42%, var(--kedt-border));
+  box-shadow: 0 22px 55px -30px rgb(37 99 235 / 28%);
+}
+
+main img {
+  height: auto;
+}
+
+main a.group img {
+  transition: transform 350ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 350ms ease;
+}
+
+main a.group:hover img {
+  filter: saturate(1.08);
+}
+
+footer {
+  background-image: linear-gradient(to bottom, transparent, rgb(148 163 184 / 3%));
+}
+
+/* Dark mode is controlled by the existing ThemeProvider body class. */
+body.bg-\[\#141414\] {
+  color-scheme: dark;
+  --kedt-surface: #141414;
+  --kedt-surface-soft: #1b1b1b;
+  --kedt-border: #303030;
+  --kedt-muted: #a1a1aa;
+  --kedt-shadow: 0 18px 50px -28px rgb(0 0 0 / 65%);
+}
+
+body.bg-\[\#141414\] header {
+  border-color: rgb(255 255 255 / 8%);
+  background-color: rgb(20 20 20 / 86%);
+}
+
+body.bg-\[\#141414\] footer {
+  background-image: linear-gradient(to bottom, transparent, rgb(255 255 255 / 2%));
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+
+  header {
+    padding-inline: 1rem;
+  }
+
+  main {
+    gap: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
