@@ -162,3 +162,178 @@ body:has(.kedt-home) .kedt-home-skills > section > section,
 body:has(.kedt-home) .kedt-home-reactions > section {
   transition: background-color .25s ease,border-color .25s ease,box-shadow .25s ease;
 }
+
+
+/* === KEDT precision polish: dark mode, unified pages, card sizing & motion === */
+
+/* Correctly detect the actual body class emitted by ThemeProvider */
+body.bg-\[\#141414\] {
+  color: #f1f5f9 !important;
+  background-color: #0b1020 !important;
+  background-image:
+    radial-gradient(ellipse at 12% 8%, rgba(14,165,233,.16), transparent 34%),
+    radial-gradient(ellipse at 88% 22%, rgba(99,102,241,.16), transparent 34%),
+    radial-gradient(ellipse at 52% 92%, rgba(168,85,247,.10), transparent 38%) !important;
+  background-attachment: fixed;
+}
+body.bg-\[\#141414\] header {
+  background: rgba(10,15,28,.78) !important;
+  border-color: rgba(148,163,184,.16) !important;
+  color: #f1f5f9 !important;
+}
+body.bg-\[\#141414\] footer {
+  color: #e2e8f0;
+  border-color: rgba(148,163,184,.15) !important;
+  background: linear-gradient(135deg,rgba(15,23,42,.78),rgba(30,41,59,.52)) !important;
+}
+body.bg-\[\#141414\] .kedt-home-hero > div,
+body.bg-\[\#141414\] .kedt-home-process .kedt-process-card,
+body.bg-\[\#141414\] .kedt-home-portfolio a.group,
+body.bg-\[\#141414\] .kedt-home-skills > section > section,
+body.bg-\[\#141414\] .kedt-home-reactions > section {
+  color: #e2e8f0 !important;
+  background: rgba(17,25,43,.72) !important;
+  border-color: rgba(148,163,184,.18) !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,.24);
+}
+body.bg-\[\#141414\] .kedt-home-process .kedt-process-card p,
+body.bg-\[\#141414\] .kedt-home-portfolio a.group p {
+  color: #aab7ca !important;
+}
+body.bg-\[\#141414\] .kedt-home-skills > section > section > div > div,
+body.bg-\[\#141414\] .kedt-home-reactions button {
+  color: #e2e8f0 !important;
+  background: rgba(30,41,59,.72) !important;
+  border-color: rgba(148,163,184,.18) !important;
+}
+
+/* About and Contact: one continuous glass canvas, with sections integrated inside */
+main:has(> section > .grid),
+main:has(> section > div > p.text-xs) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 6.5rem;
+  margin-bottom: 4rem;
+  padding: clamp(1.1rem,3vw,2.5rem) !important;
+  border: 1px solid rgba(125,155,205,.25);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at 4% 4%,rgba(14,165,233,.10),transparent 28%),
+    radial-gradient(circle at 96% 40%,rgba(99,102,241,.09),transparent 30%),
+    rgba(255,255,255,.66);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  backdrop-filter: blur(22px) saturate(150%);
+  box-shadow: 0 22px 65px rgba(30,64,120,.08);
+}
+main:has(> section > .grid) > section,
+main:has(> section > div > p.text-xs) > section,
+main:has(> section > .grid) > div,
+main:has(> section > div > p.text-xs) > div {
+  background: transparent !important;
+}
+main:has(> section > .grid) > section:not(:first-child),
+main:has(> section > div > p.text-xs) > section:not(:first-child) {
+  border-color: rgba(125,155,205,.16);
+}
+body.bg-\[\#141414\] main:has(> section > .grid),
+body.bg-\[\#141414\] main:has(> section > div > p.text-xs) {
+  color: #e5edf8 !important;
+  border-color: rgba(148,163,184,.18);
+  background:
+    radial-gradient(circle at 4% 4%,rgba(14,165,233,.14),transparent 28%),
+    radial-gradient(circle at 96% 40%,rgba(99,102,241,.13),transparent 30%),
+    rgba(15,23,42,.76) !important;
+  box-shadow: 0 22px 65px rgba(0,0,0,.25);
+}
+body.bg-\[\#141414\] main:has(> section > .grid) > section,
+body.bg-\[\#141414\] main:has(> section > div > p.text-xs) > section,
+body.bg-\[\#141414\] main:has(> section > .grid) > div,
+body.bg-\[\#141414\] main:has(> section > div > p.text-xs) > div {
+  color: #e5edf8;
+}
+body.bg-\[\#141414\] main:has(> section > .grid) article,
+body.bg-\[\#141414\] main:has(> section > div > p.text-xs) a,
+body.bg-\[\#141414\] main:has(> section > .grid) > section:first-child,
+body.bg-\[\#141414\] main:has(> section > div > p.text-xs) > section:first-child {
+  background-color: rgba(30,41,59,.52) !important;
+  border-color: rgba(148,163,184,.2) !important;
+}
+
+/* Same measured card height and spacing across all process steps */
+.kedt-home-process .kedt-process-grid {
+  display: grid;
+  align-items: stretch !important;
+  gap: 1rem !important;
+  border: 0 !important;
+}
+.kedt-home-process .kedt-process-card {
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0;
+  min-height: 310px;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 1.5rem !important;
+  border: 1px solid rgba(125,155,205,.25) !important;
+  border-radius: 1.5rem !important;
+  background: rgba(255,255,255,.66) !important;
+  color: #334155;
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: 0 12px 34px rgba(30,64,120,.06);
+  transition: transform .32s cubic-bezier(.2,.75,.25,1),
+              box-shadow .32s ease, border-color .32s ease,
+              background-color .32s ease, color .32s ease !important;
+}
+.kedt-home-process .kedt-process-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(56,189,248,.58) !important;
+  box-shadow: 0 22px 44px rgba(56,189,248,.14);
+}
+.kedt-home-process .kedt-process-card p {
+  flex: 1;
+  color: #64748b !important;
+  line-height: 1.95;
+}
+.kedt-home-process .kedt-process-card svg {
+  transition: transform .32s ease, filter .32s ease;
+}
+.kedt-home-process .kedt-process-card:hover svg {
+  transform: translateY(-3px) scale(1.09);
+  filter: drop-shadow(0 7px 12px rgba(56,189,248,.22));
+}
+
+/* Portfolio and process cards both receive a reliable hover transition */
+.kedt-home-portfolio a.group {
+  transition: transform .32s cubic-bezier(.2,.75,.25,1),
+              box-shadow .32s ease, border-color .32s ease,
+              background-color .32s ease !important;
+}
+.kedt-home-portfolio a.group:hover {
+  transform: translateY(-7px) !important;
+}
+.kedt-home-portfolio a.group > div:first-child img {
+  transition: transform .45s cubic-bezier(.2,.75,.25,1), filter .35s ease;
+}
+.kedt-home-portfolio a.group:hover > div:first-child img {
+  transform: scale(1.045);
+}
+.kedt-home-process .kedt-process-card,
+.kedt-home-portfolio a.group {
+  will-change: transform;
+}
+@media (max-width: 767px) {
+  .kedt-home-process .kedt-process-card { min-height: 0; }
+  main:has(> section > .grid),
+  main:has(> section > div > p.text-xs) {
+    border-radius: 1.5rem;
+    margin-top: 5.5rem;
+    padding: 1rem !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kedt-home-process .kedt-process-card,
+  .kedt-home-portfolio a.group,
+  .kedt-home-portfolio a.group img { transition: none !important; }
+}
