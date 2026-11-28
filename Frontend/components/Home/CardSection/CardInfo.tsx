@@ -9,7 +9,7 @@ function CardInfo() {
 	const { isDark } = useThemeContext();
 	return (
 		<>
-			<section className={`kedt-process-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 ${isDark ? "border-[#252525]" : "border-gray-400"} mb-5 items-stretch justify-center gap-4`}>
+			<section className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 border-b ${isDark ? "border-[#252525]" : "border-gray-400"} mb-5 items-center justify-center`}>
 				<Card
 					icon={faServer}
 					title="خرید دامنه و هاست"

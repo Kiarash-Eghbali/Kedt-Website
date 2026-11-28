@@ -1,339 +1,131 @@
 @import "tailwindcss";
 
-/* KEDT home page — designed to match the About / Contact glass panels */
-:root { color-scheme: light; }
-html { scroll-behavior: smooth; }
+:root {
+  color-scheme: light;
+  --page: #f5f7fb;
+  --surface: rgba(255,255,255,.88);
+  --surface-strong: #fff;
+  --text: #172033;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --accent: #4169e1;
+  --accent-soft: #eaf0ff;
+  --shadow: 0 18px 55px rgba(30, 50, 90, .08);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
 body {
+  margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 12% 10%, rgba(14,165,233,.12), transparent 32%),
-    radial-gradient(ellipse at 88% 24%, rgba(99,102,241,.11), transparent 34%),
-    radial-gradient(ellipse at 52% 88%, rgba(168,85,247,.07), transparent 38%),
-    #f8faff;
-  background-attachment: fixed;
-  transition: background-color .3s ease, color .3s ease;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font-vazir), Tahoma, sans-serif;
+  line-height: 1.8;
+  transition: background-color .25s ease, color .25s ease;
 }
-body:has(.kedt-home) { overflow-x: hidden; }
-::selection { background: rgba(56,189,248,.25); }
+body:has(.bg-\[\#141414\]), body[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #101521;
+  --surface: rgba(25, 34, 51, .9);
+  --surface-strong: #192233;
+  --text: #e8edf7;
+  --muted: #a5b1c5;
+  --line: #2b374b;
+  --accent: #8aa8ff;
+  --accent-soft: #202e4a;
+  --shadow: 0 18px 55px rgba(0,0,0,.22);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 12% 8%, rgba(75,112,220,.09), transparent 32%), radial-gradient(ellipse at 90% 30%, rgba(35,170,160,.06), transparent 28%);
+}
+::selection { background: rgba(65,105,225,.2); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
-/* Keep the visual language restrained: soft glass, fine borders, subtle light */
-.kedt-home { position: relative; isolation: isolate; }
-.kedt-home::before, .kedt-home::after {
-  content: ""; position: absolute; z-index: -1; pointer-events: none;
-  width: 19rem; height: 19rem; border-radius: 9999px; filter: blur(75px); opacity: .18;
-}
-.kedt-home::before { top: 4rem; right: -8rem; background: #38bdf8; }
-.kedt-home::after { top: 42rem; left: -8rem; background: #818cf8; }
-
-/* Hero keeps its original grid/mask, but gains the same framed glass surface */
-.kedt-home-hero > div {
-  position: relative; overflow: hidden; min-height: 570px; height: auto;
-  padding: 3.5rem 2rem 2.5rem; border: 1px solid rgba(125,155,205,.25);
-  border-radius: 2rem; background: rgba(255,255,255,.58);
-  -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%);
-  box-shadow: 0 18px 55px rgba(30,64,120,.07);
-}
-.kedt-home-hero > div::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
-  background: linear-gradient(135deg,rgba(255,255,255,.38),transparent 45%,rgba(99,102,241,.035));
-}
-.kedt-home-hero h1 {
-  background: linear-gradient(100deg,#0ea5e9,#6366f1 58%,#a855f7);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  font-weight: 900; letter-spacing: -.04em;
-}
-.kedt-home-hero p { line-height: 2.15; }
-.kedt-home-hero a {
-  border-radius: 13px; border: 1px solid rgba(255,255,255,.25);
-  background: linear-gradient(110deg,#0284c7,#4f46e5);
-  color: white !important; box-shadow: 0 10px 28px rgba(79,70,229,.18);
-}
-.kedt-home-hero a:hover { transform: translateY(-3px); box-shadow: 0 15px 34px rgba(79,70,229,.25); }
-
-/* Section headings mirror the About / Contact page typography */
-.kedt-home-block h1:first-child {
-  letter-spacing: -.025em;
-}
-.kedt-home-block > section > h1,
-.kedt-home-block > section > div > h1 {
-  color: #334155 !important; font-weight: 900;
-  margin-bottom: 1.25rem;
-}
-
-/* Service cards: convert existing cards into individual glass tiles */
-.kedt-home-process > section > section {
-  border: 0 !important; background: transparent !important;
-  gap: 1rem; padding: .5rem 0 1rem;
-}
-.kedt-home-process > section > section > div {
-  min-height: 265px; height: auto; width: 100%;
-  padding: 1.6rem 1.25rem; margin: .5rem auto;
-  border: 1px solid rgba(125,155,205,.24) !important;
-  border-radius: 1.5rem !important;
-  background: rgba(255,255,255,.58) !important;
-  color: #334155 !important;
-  -webkit-backdrop-filter: blur(16px) saturate(145%); backdrop-filter: blur(16px) saturate(145%);
-  box-shadow: 0 12px 34px rgba(30,64,120,.055);
-  transition: transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-}
-.kedt-home-process > section > section > div:hover {
-  transform: translateY(-5px); border-color: rgba(56,189,248,.5) !important;
-  box-shadow: 0 18px 40px rgba(56,189,248,.11);
-}
-.kedt-home-process > section > section > div p { color: #64748b !important; line-height: 1.9; }
-
-/* Portfolio cards retain their existing content and links */
-.kedt-home-portfolio > section > section {
-  border: 0 !important; gap: 1rem; padding: .5rem 0 1rem;
-}
-.kedt-home-portfolio a.group {
-  width: 100%; min-height: 430px; margin: .5rem auto;
-  padding: 1.25rem; border: 1px solid rgba(125,155,205,.24);
-  border-radius: 1.5rem; background: rgba(255,255,255,.62);
-  -webkit-backdrop-filter: blur(16px) saturate(145%); backdrop-filter: blur(16px) saturate(145%);
-  box-shadow: 0 12px 34px rgba(30,64,120,.055);
-  transition: transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-}
-.kedt-home-portfolio a.group:hover {
-  transform: translateY(-5px); border-color: rgba(56,189,248,.48);
-  box-shadow: 0 18px 40px rgba(56,189,248,.11);
-}
-.kedt-home-portfolio a.group p { color: #64748b !important; line-height: 1.9; height: auto; min-height: 6rem; }
-.kedt-home-portfolio a.group span { background: rgba(99,102,241,.09) !important; color: #4f46e5; }
-
-/* Skill icons sit in matching small glass tiles */
-.kedt-home-skills > section > section {
-  width: 100%; border: 0 !important; border-radius: 1.5rem;
-  background: rgba(255,255,255,.48); padding: 1.5rem .75rem;
-  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
-}
-.kedt-home-skills > section > section > div > div {
-  border: 1px solid rgba(125,155,205,.2);
-  background: rgba(255,255,255,.65) !important;
-  border-radius: 1.1rem !important;
-  box-shadow: 0 8px 22px rgba(30,64,120,.045);
-}
-
-/* Reaction / feedback area */
-.kedt-home-reactions > section {
-  width: 100%; padding: 2rem 1.25rem; border: 1px solid rgba(125,155,205,.23);
-  border-radius: 1.75rem; background: rgba(255,255,255,.58);
-  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
-}
-.kedt-home-reactions button, .kedt-home-reactions section > div > div {
-  border-color: rgba(125,155,205,.25) !important;
-  background: rgba(255,255,255,.72) !important; border-radius: 1rem !important;
-}
-
-/* Shared header/footer framing, not blanket styling every section */
 header {
-  background: rgba(255,255,255,.72) !important;
-  border-color: rgba(125,155,205,.2) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(155%); backdrop-filter: blur(20px) saturate(155%);
-  box-shadow: 0 10px 35px rgba(30,64,120,.055);
+  background: color-mix(in srgb, var(--surface-strong) 88%, transparent) !important;
+  border-color: var(--line) !important;
+  box-shadow: 0 5px 24px rgba(20,35,65,.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+header a, nav a { transition: color .2s ease, opacity .2s ease; }
+main { width: min(1120px, calc(100% - 40px)); margin-inline: auto; padding-top: 7.5rem; padding-bottom: 2rem; gap: clamp(3.5rem, 8vw, 7rem) !important; }
+main > section, main > div { max-width: 100%; }
+main section { scroll-margin-top: 7rem; }
+main h1, main h2, main h3 { letter-spacing: -.025em; line-height: 1.45; }
+main p { line-height: 2; }
+
+/* Calm, consistent surfaces without excessive blur or contrast. */
+main > section:not(:first-child), main > div:not(:first-child) {
+  border-color: var(--line);
+}
+main section > h1, main section > h2 { color: var(--text); }
+main section p { color: var(--muted); }
+main section a, main section button { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease, border-color .22s ease; }
+main section a:hover, main section button:hover { transform: translateY(-2px); }
+
+/* Hero */
+main > div:first-child {
+  min-height: min(660px, calc(100svh - 7rem));
+  height: auto !important;
+  padding: clamp(3rem, 8vw, 6rem) 1rem 4rem !important;
+  border-radius: 0 0 32px 32px;
+  background-image: radial-gradient(circle at center, rgba(65,105,225,.08), transparent 65%) !important;
+  mask-image: none !important;
+}
+main > div:first-child h1 { color: var(--text) !important; font-size: clamp(2.4rem, 6vw, 4.5rem) !important; }
+main > div:first-child p { max-width: 680px; color: var(--muted) !important; }
+
+/* Cards, portfolio and content panels */
+main article, main section article, main section > div > a {
+  border-radius: 20px;
+}
+main .grid > div, main .grid > a {
+  min-width: 0;
+}
+main .grid > div[class*="border"], main .grid > a[class*="border"] {
+  background: var(--surface) !important;
+  border-color: var(--line) !important;
+  box-shadow: var(--shadow);
+}
+main .grid > div[class*="border"]:hover, main .grid > a[class*="border"]:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line)) !important;
+  box-shadow: 0 22px 50px rgba(40,70,140,.13);
+  transform: translateY(-5px);
 }
 footer {
-  border-top: 1px solid rgba(125,155,205,.2);
-  background: linear-gradient(135deg,rgba(255,255,255,.68),rgba(238,244,255,.5));
-  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
+  border-color: var(--line) !important;
+  color: var(--text);
+  margin-top: 5rem !important;
+  padding: 2rem max(20px, calc((100% - 1120px)/2)) 1rem !important;
 }
-input,textarea,select {
-  border-radius: 13px; border-color: rgba(125,155,205,.3) !important;
-}
+footer p, footer a { color: var(--muted); }
+footer a:hover { color: var(--accent); }
+
+/* Shared page rhythm */
+main > section { width: 100%; }
+main > section > section { border-color: var(--line) !important; }
+main img { max-width: 100%; height: auto; }
+
 @media (max-width: 767px) {
-  .kedt-home { gap: 2.75rem; padding-top: 6rem; }
-  .kedt-home-hero > div { min-height: 0; padding: 5.5rem 1.25rem 2rem; border-radius: 1.6rem; }
-  .kedt-home-hero > div > div { gap: 2rem; }
-  .kedt-home-process > section > section,
-  .kedt-home-portfolio > section > section { grid-template-columns: 1fr; }
-  .kedt-home-portfolio a.group { min-height: 0; }
-  .kedt-home-skills > section > section { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  header { padding-inline: 1rem !important; }
+  main { width: min(100% - 28px, 620px); padding-top: 6.5rem; gap: 3.5rem !important; }
+  main > div:first-child { min-height: 570px; padding-inline: .25rem !important; }
+  main > div:first-child p { width: 92% !important; font-size: .88rem; }
+  main .grid { gap: 1rem; }
+  main .grid > div, main .grid > a { width: 100% !important; margin-inline: auto; }
+  footer { margin-top: 3rem !important; padding-inline: 1rem !important; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
-}
-
-/* Dark theme: the exact same glass treatment, with deep navy translucent surfaces */
-body:has(.kedt-home) [class*="bg-\\[\\#141414\\]"] { background-color: transparent !important; }
-body:has(.kedt-home) .kedt-home-hero > div,
-body:has(.kedt-home) .kedt-home-process > section > section > div,
-body:has(.kedt-home) .kedt-home-portfolio a.group,
-body:has(.kedt-home) .kedt-home-skills > section > section,
-body:has(.kedt-home) .kedt-home-reactions > section {
-  transition: background-color .25s ease,border-color .25s ease,box-shadow .25s ease;
-}
-
-
-/* === KEDT precision polish: dark mode, unified pages, card sizing & motion === */
-
-/* Correctly detect the actual body class emitted by ThemeProvider */
-body.bg-\[\#141414\] {
-  color: #f1f5f9 !important;
-  background-color: #0b1020 !important;
-  background-image:
-    radial-gradient(ellipse at 12% 8%, rgba(14,165,233,.16), transparent 34%),
-    radial-gradient(ellipse at 88% 22%, rgba(99,102,241,.16), transparent 34%),
-    radial-gradient(ellipse at 52% 92%, rgba(168,85,247,.10), transparent 38%) !important;
-  background-attachment: fixed;
-}
-body.bg-\[\#141414\] header {
-  background: rgba(10,15,28,.78) !important;
-  border-color: rgba(148,163,184,.16) !important;
-  color: #f1f5f9 !important;
-}
-body.bg-\[\#141414\] footer {
-  color: #e2e8f0;
-  border-color: rgba(148,163,184,.15) !important;
-  background: linear-gradient(135deg,rgba(15,23,42,.78),rgba(30,41,59,.52)) !important;
-}
-body.bg-\[\#141414\] .kedt-home-hero > div,
-body.bg-\[\#141414\] .kedt-home-process .kedt-process-card,
-body.bg-\[\#141414\] .kedt-home-portfolio a.group,
-body.bg-\[\#141414\] .kedt-home-skills > section > section,
-body.bg-\[\#141414\] .kedt-home-reactions > section {
-  color: #e2e8f0 !important;
-  background: rgba(17,25,43,.72) !important;
-  border-color: rgba(148,163,184,.18) !important;
-  box-shadow: 0 16px 48px rgba(0,0,0,.24);
-}
-body.bg-\[\#141414\] .kedt-home-process .kedt-process-card p,
-body.bg-\[\#141414\] .kedt-home-portfolio a.group p {
-  color: #aab7ca !important;
-}
-body.bg-\[\#141414\] .kedt-home-skills > section > section > div > div,
-body.bg-\[\#141414\] .kedt-home-reactions button {
-  color: #e2e8f0 !important;
-  background: rgba(30,41,59,.72) !important;
-  border-color: rgba(148,163,184,.18) !important;
-}
-
-/* About and Contact: one continuous glass canvas, with sections integrated inside */
-main:has(> section > .grid),
-main:has(> section > div > p.text-xs) {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  margin-top: 6.5rem;
-  margin-bottom: 4rem;
-  padding: clamp(1.1rem,3vw,2.5rem) !important;
-  border: 1px solid rgba(125,155,205,.25);
-  border-radius: 2rem;
-  background:
-    radial-gradient(circle at 4% 4%,rgba(14,165,233,.10),transparent 28%),
-    radial-gradient(circle at 96% 40%,rgba(99,102,241,.09),transparent 30%),
-    rgba(255,255,255,.66);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-  backdrop-filter: blur(22px) saturate(150%);
-  box-shadow: 0 22px 65px rgba(30,64,120,.08);
-}
-main:has(> section > .grid) > section,
-main:has(> section > div > p.text-xs) > section,
-main:has(> section > .grid) > div,
-main:has(> section > div > p.text-xs) > div {
-  background: transparent !important;
-}
-main:has(> section > .grid) > section:not(:first-child),
-main:has(> section > div > p.text-xs) > section:not(:first-child) {
-  border-color: rgba(125,155,205,.16);
-}
-body.bg-\[\#141414\] main:has(> section > .grid),
-body.bg-\[\#141414\] main:has(> section > div > p.text-xs) {
-  color: #e5edf8 !important;
-  border-color: rgba(148,163,184,.18);
-  background:
-    radial-gradient(circle at 4% 4%,rgba(14,165,233,.14),transparent 28%),
-    radial-gradient(circle at 96% 40%,rgba(99,102,241,.13),transparent 30%),
-    rgba(15,23,42,.76) !important;
-  box-shadow: 0 22px 65px rgba(0,0,0,.25);
-}
-body.bg-\[\#141414\] main:has(> section > .grid) > section,
-body.bg-\[\#141414\] main:has(> section > div > p.text-xs) > section,
-body.bg-\[\#141414\] main:has(> section > .grid) > div,
-body.bg-\[\#141414\] main:has(> section > div > p.text-xs) > div {
-  color: #e5edf8;
-}
-body.bg-\[\#141414\] main:has(> section > .grid) article,
-body.bg-\[\#141414\] main:has(> section > div > p.text-xs) a,
-body.bg-\[\#141414\] main:has(> section > .grid) > section:first-child,
-body.bg-\[\#141414\] main:has(> section > div > p.text-xs) > section:first-child {
-  background-color: rgba(30,41,59,.52) !important;
-  border-color: rgba(148,163,184,.2) !important;
-}
-
-/* Same measured card height and spacing across all process steps */
-.kedt-home-process .kedt-process-grid {
-  display: grid;
-  align-items: stretch !important;
-  gap: 1rem !important;
-  border: 0 !important;
-}
-.kedt-home-process .kedt-process-card {
-  box-sizing: border-box;
-  width: 100% !important;
-  min-width: 0;
-  min-height: 310px;
-  height: 100% !important;
-  margin: 0 !important;
-  padding: 1.5rem !important;
-  border: 1px solid rgba(125,155,205,.25) !important;
-  border-radius: 1.5rem !important;
-  background: rgba(255,255,255,.66) !important;
-  color: #334155;
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
-  backdrop-filter: blur(18px) saturate(150%);
-  box-shadow: 0 12px 34px rgba(30,64,120,.06);
-  transition: transform .32s cubic-bezier(.2,.75,.25,1),
-              box-shadow .32s ease, border-color .32s ease,
-              background-color .32s ease, color .32s ease !important;
-}
-.kedt-home-process .kedt-process-card:hover {
-  transform: translateY(-7px);
-  border-color: rgba(56,189,248,.58) !important;
-  box-shadow: 0 22px 44px rgba(56,189,248,.14);
-}
-.kedt-home-process .kedt-process-card p {
-  flex: 1;
-  color: #64748b !important;
-  line-height: 1.95;
-}
-.kedt-home-process .kedt-process-card svg {
-  transition: transform .32s ease, filter .32s ease;
-}
-.kedt-home-process .kedt-process-card:hover svg {
-  transform: translateY(-3px) scale(1.09);
-  filter: drop-shadow(0 7px 12px rgba(56,189,248,.22));
-}
-
-/* Portfolio and process cards both receive a reliable hover transition */
-.kedt-home-portfolio a.group {
-  transition: transform .32s cubic-bezier(.2,.75,.25,1),
-              box-shadow .32s ease, border-color .32s ease,
-              background-color .32s ease !important;
-}
-.kedt-home-portfolio a.group:hover {
-  transform: translateY(-7px) !important;
-}
-.kedt-home-portfolio a.group > div:first-child img {
-  transition: transform .45s cubic-bezier(.2,.75,.25,1), filter .35s ease;
-}
-.kedt-home-portfolio a.group:hover > div:first-child img {
-  transform: scale(1.045);
-}
-.kedt-home-process .kedt-process-card,
-.kedt-home-portfolio a.group {
-  will-change: transform;
-}
-@media (max-width: 767px) {
-  .kedt-home-process .kedt-process-card { min-height: 0; }
-  main:has(> section > .grid),
-  main:has(> section > div > p.text-xs) {
-    border-radius: 1.5rem;
-    margin-top: 5.5rem;
-    padding: 1rem !important;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .kedt-home-process .kedt-process-card,
-  .kedt-home-portfolio a.group,
-  .kedt-home-portfolio a.group img { transition: none !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

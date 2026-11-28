@@ -10,12 +10,20 @@ import { ReactionProvider } from "@/contexts/ReactionContext";
 import { MenuProvider } from "@/contexts/MenuContext";
 import Menu from "@/components/Layouts/Headers/menu";
 
-const vazirMatn = Vazirmatn({ subsets: ["arabic"], display: "swap", preload: true, adjustFontFallback: true });
+const vazirMatn = Vazirmatn({ subsets: ["arabic"], display: "swap", preload: true, adjustFontFallback: true, variable: "--font-vazir" });
 const poppins = Poppins({ subsets: ["latin"], display: "swap", variable: "--font-poppins", weight: ["500"] });
 
 export const metadata: Metadata = {
-	title: "KEDT | تیم توسعه دهنده کیارش اقبالی",
-	description: "KEDT website created with NextJs , Typescript , Tailwindcss , ExpressJs , NodeJs",
+  metadataBase: new URL("https://kedt.ir"),
+  title: { default: "KEDT | طراحی و توسعه وب با کیارش اقبالی", template: "%s | KEDT" },
+  description: "KEDT؛ نمونه‌کارها، مهارت‌ها و خدمات طراحی و توسعه وب کیارش اقبالی با React، Next.js و TypeScript.",
+  category: "technology",
+  applicationName: "KEDT",
+  keywords: ["KEDT", "کیارش اقبالی", "طراحی سایت", "توسعه وب", "Next.js", "React", "TypeScript", "طراحی وبسایت"],
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", locale: "fa_IR", url: "https://kedt.ir", siteName: "KEDT", title: "KEDT | طراحی و توسعه وب", description: "نمونه‌کارها و معرفی خدمات طراحی و توسعه وب کیارش اقبالی." },
+  twitter: { card: "summary_large_image", title: "KEDT | طراحی و توسعه وب", description: "نمونه‌کارها و معرفی خدمات طراحی و توسعه وب کیارش اقبالی." },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
